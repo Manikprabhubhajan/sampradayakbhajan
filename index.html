@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="te">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>తెలుగు భజనాల సూచిక</title>
+
   <style>
     body {
       font-family: 'Noto Sans Telugu', Arial, sans-serif;
@@ -16,6 +17,22 @@
       color: #8e44ad;
       font-size: 2em;
       text-align: center;
+    }
+
+    /* Home Button */
+    .home-btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      background-color: #27ae60;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .home-btn:hover {
+      background-color: #1e8449;
     }
 
     input[type="text"] {
@@ -45,7 +62,6 @@
       text-decoration: underline;
     }
 
-    /* Mobile Responsive Styling */
     @media (max-width: 600px) {
       body {
         font-size: 18px;
@@ -66,8 +82,14 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- Home Button -->
+  <a href="https://manikprabhubhajan.github.io/TELUGUBHAJAN/" class="home-btn">🏠 Home</a>
+
   <h1>శ్రీ మాణిక్ ప్రభు సాంప్రదాయక పదములు</h1>
+
   <input type="text" id="search" placeholder="భజనను తెలుగు లో వెతకండి..." onkeyup="filterSongs()">
 
   <ul id="songList">
@@ -95,9 +117,11 @@
       const filter = input.value.toLowerCase();
       const ul = document.getElementById('songList');
       const li = ul.getElementsByTagName('li');
+
       for (let i = 0; i < li.length; i++) {
         const a = li[i].getElementsByTagName('a')[0];
         const txtValue = a.textContent || a.innerText;
+
         if (txtValue.toLowerCase().indexOf(filter) > -1) {
           li[i].style.display = "";
         } else {
@@ -106,6 +130,6 @@
       }
     }
   </script>
+
 </body>
 </html>
-
