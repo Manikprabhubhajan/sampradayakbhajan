@@ -19,22 +19,6 @@
       text-align: center;
     }
 
-    /* Home Button */
-    .home-btn {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 15px;
-      background-color: #27ae60;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    .home-btn:hover {
-      background-color: #1e8449;
-    }
-
     input[type="text"] {
       width: 100%;
       font-size: 1.2em;
@@ -62,6 +46,28 @@
       text-decoration: underline;
     }
 
+    /* Floating Home Button */
+    .floating-home {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #27ae60;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .floating-home:hover {
+      background-color: #1e8449;
+      transform: scale(1.1);
+    }
+
+    /* Mobile Responsive */
     @media (max-width: 600px) {
       body {
         font-size: 18px;
@@ -85,9 +91,6 @@
 
 <body>
 
-  <!-- Home Button -->
-  <a href="https://manikprabhubhajan.github.io/TELUGUBHAJAN/" class="home-btn">🏠 Home</a>
-
   <h1>శ్రీ మాణిక్ ప్రభు సాంప్రదాయక పదములు</h1>
 
   <input type="text" id="search" placeholder="భజనను తెలుగు లో వెతకండి..." onkeyup="filterSongs()">
@@ -110,6 +113,10 @@
     <li><a href="docs/15. MANGALVAR BHAJAN.pdf" target="_blank">15. మంగళవారము భజన</a></li>
     <li><a href="docs/16. BHUDAVAR BHAJAN.pdf" target="_blank">16. బుధవారము భజన</a></li>
   </ul>
+
+  <!-- Floating Home Button -->
+  <a href="https://manikprabhubhajan.github.io/TELUGUBHAJAN/" 
+     class="floating-home" title="Home">🏠</a>
 
   <script>
     function filterSongs() {
